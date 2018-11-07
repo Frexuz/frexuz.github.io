@@ -1,7 +1,8 @@
 import { images } from '@media'
 
-export default {
-  EpisodeCalendar: {
+export default [
+  {
+    name: 'EpisodeCalendar',
     logo: images.EpisodeCalendar.logo,
     backgroundColor: '#212121',
     color: '#fff',
@@ -11,7 +12,8 @@ export default {
     tags: ['Ruby on Rails', 'jQuery', 'MySQL', 'SCSS'],
     buttons: [{ href: 'https://episodecalendar.com' }],
   },
-  Travlr: {
+  {
+    name: 'Travlr',
     logo: images.Travlr.logo,
     backgroundColor: '#072046',
     color: '#eee',
@@ -23,4 +25,18 @@ export default {
       { text: 'Play Store', href: '#' },
     ],
   },
-}
+  {
+    name: 'Flately',
+    logo: images.Flately.logo,
+    backgroundColor: '#072046',
+    color: '#eee',
+    tagTheme: 'dark',
+    tagLine: 'Property listings in Hong Kong',
+    tags: ['Ruby on Rails', 'React', 'React Native', 'AWS'],
+    buttons: [
+      { text: 'Website', href: '#' },
+      { text: 'App Store', href: '#' },
+      { text: 'Play Store', href: '#' },
+    ],
+  },
+]

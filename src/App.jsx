@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { hot } from 'react-hot-loader'
-import { Bio, CV, Project } from './components'
+
+import { projects } from '@media'
+import { Bio, CV, Project } from '@components'
 
 const styles = {
   wrapper: {
@@ -48,8 +50,9 @@ class App extends Component {
         </section>
         <section style={styles.projects}>
           <h2 style={styles.sectionText}>Personal projects</h2>
-          <Project name="EpisodeCalendar" />
-          <Project name="Travlr" />
+          {projects.map(project => (
+            <Project key={`Project${project.name}`} project={project} />
+          ))}
         </section>
       </div>
     )
