@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { images } from '@media'
-import { Tag, Wrapper } from '@components'
+import { Tag } from '@components'
 
 const styles = {
   wrapper: {
