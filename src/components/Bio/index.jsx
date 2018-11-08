@@ -5,9 +5,7 @@ import { Tag } from '@components'
 
 const styles = {
   wrapper: {
-    padding: 50,
     alignItems: 'center',
-    backgroundColor: '#f6f6f6',
   },
   imgWrapper: {
     width: 250,
@@ -32,6 +30,7 @@ const styles = {
     color: '#fff',
     padding: '5px 10px',
     borderRadius: 3,
+    textAlign: 'center',
   },
   subTitle: {
     marginTop: 5,
@@ -73,10 +72,11 @@ const styles = {
   tags: {
     flexDirection: 'row',
     marginTop: 20,
+    flexWrap: 'wrap',
+    justifyContent: 'center',
   },
   tag: {
-    marginLeft: 2,
-    marginRight: 2,
+    margin: 2,
     backgroundColor: '#aaa',
   },
 }
@@ -131,8 +131,8 @@ const Bio = () => (
       <h2 style={styles.subTitle}>Full stack developer</h2>
       <div style={styles.tags}>
         <Tag text="Ruby on Rails" style={styles.tag} />
-        <Tag text="SCSS" style={styles.tag} />
         <Tag text="React / React Native" style={styles.tag} />
+        <Tag text="SCSS" style={styles.tag} />
         <Tag text="MySQL / Postgres" style={styles.tag} />
         <Tag text="GraphQL" style={styles.tag} />
         <Tag text="Redis" style={styles.tag} />
