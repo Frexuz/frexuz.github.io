@@ -1,4 +1,5 @@
 export { default as Bio } from './Bio'
+export { default as BioRandom } from './BioRandom'
 export { default as Button } from './Button'
 export { default as CV } from './CV'
 export { default as CVItem } from './CVItem'

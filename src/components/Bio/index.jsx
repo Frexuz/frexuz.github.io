@@ -11,15 +11,22 @@ const Bio = ({ isMobile }) => {
     },
     imgWrapper: {
       marginBottom: 50,
+      padding: 7,
+      borderRadius: '50%',
+      background: 'linear-gradient(45deg, #cc0178, #f66, #cc0178)',
       width: isMobile ? 150 : 250,
       height: isMobile ? 150 : 250,
+      boxShadow: '0 0 25px 2px rgba(0, 0, 0, 0.2)',
     },
     img: {
       width: '100%',
       display: 'block',
       borderRadius: '50%',
       height: '100%',
-      boxShadow: '10px 10px 20px rgba(0, 0, 0, 0.1)',
+      backgroundSize: 'cover',
+      boxShadow: '0 0 30px 5px rgba(0, 0, 0, 0.25) inset',
+      backgroundColor: '#fff',
+      backgroundImage: `url(${images.profilePicture})`,
     },
     info: {
       flex: 1,
@@ -124,14 +131,14 @@ const Bio = ({ isMobile }) => {
         </div>
       </div>
       <div style={styles.imgWrapper}>
-        <img src={images.profilePicture} alt="" style={styles.img} />
+        <div style={styles.img} />
       </div>
       <div style={styles.info}>
         <div>
           <h1 style={styles.title}>Kristian Gerardsson</h1>
           <h4 style={styles.aka}>AKA FREXUZ</h4>
         </div>
-        <h2 style={styles.subTitle}>Full stack developer</h2>
+        <h2 style={styles.subTitle}>Full-stack developer</h2>
         <div style={styles.tags}>
           <Tag text="Ruby on Rails" style={styles.tag} />
           <Tag text="React / React Native" style={styles.tag} />
@@ -139,9 +146,10 @@ const Bio = ({ isMobile }) => {
           <Tag text="MySQL / Postgres" style={styles.tag} />
           <Tag text="GraphQL" style={styles.tag} />
           <Tag text="Redis" style={styles.tag} />
+          <Tag text="Websockets" style={styles.tag} />
           <Tag text="AWS" style={styles.tag} />
           <Tag text="UX" style={styles.tag} />
-          <Tag text="..." style={styles.tag} />
+          <Tag text="and more..." style={styles.tag} />
         </div>
       </div>
     </div>

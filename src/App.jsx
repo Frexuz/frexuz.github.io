@@ -4,12 +4,26 @@ import { hot } from 'react-hot-loader'
 import { withBreakpoints } from 'react-breakpoints'
 
 import { projects } from '@media'
-import { Bio, Button, CV, Project, Tag } from '@components'
+import { Bio, BioRandom, Button, CV, Project, Tag } from '@components'
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {}
+  }
+
+  componentDidMount() {
+    const existingScript = document.getElementById('codepen-script')
+    if (existingScript) {
+      return
+    }
+    const script = document.createElement('script')
+
+    script.src = 'https://static.codepen.io/assets/embed/ei.js'
+    script.id = 'codepen-script'
+    script.async = true
+
+    document.body.appendChild(script)
   }
 
   render() {
@@ -25,7 +39,7 @@ class App extends Component {
       projectGrid: {
         marginTop: 50,
         display: 'grid',
-        gridTemplateColumns: isMobile ? '100%' : 'repeat(2, 50%)',
+        gridTemplateColumns: isMobile ? '100%' : '1fr 1fr',
         gridGap: 50,
       },
       bio: {
@@ -48,6 +62,7 @@ class App extends Component {
         flexDirection: 'row',
         flexWrap: 'wrap',
         marginTop: 20,
+        marginBottom: 20,
         justifyContent: 'center',
       },
       projectText: {
@@ -64,17 +79,15 @@ class App extends Component {
         <section style={styles.bio}>
           <Bio isMobile={isMobile} />
         </section>
-        <section style={styles.cv}>
-          <h2 style={{ ...styles.sectionText, ...{ color: '#000' } }}>
-            Working experience
-          </h2>
-          <CV />
-        </section>
         <section style={styles.projects}>
           <h2 style={styles.sectionText}>Personal projects</h2>
           <div style={styles.projectGrid}>
             {projects.map(project => (
-              <Project key={`Project${project.name}`} project={project} />
+              <Project
+                key={`Project${project.name}`}
+                project={project}
+                isMobile={isMobile}
+              />
             ))}
             <div style={{ alignItems: 'center' }}>
               <svg
@@ -96,6 +109,23 @@ class App extends Component {
                 <Tag text="Animations" style={{ margin: 2 }} />
                 <Tag text="Canvas" style={{ margin: 2 }} />
               </div>
+              <p
+                data-height="200"
+                data-theme-id="dark"
+                data-slug-hash="BvHsk"
+                data-default-tab="result"
+                data-user="frexuz"
+                data-pen-title="Starfield and shooting stars with canvas"
+                className="codepen"
+              >
+                See the Pen{' '}
+                <a href="https://codepen.io/frexuz/pen/BvHsk/">
+                  Starfield and shooting stars with canvas
+                </a>{' '}
+                by Kristian Gerardsson (
+                <a href="https://codepen.io/frexuz">@frexuz</a>) on{' '}
+                <a href="https://codepen.io">CodePen</a>.
+              </p>
               <h3 style={styles.projectText}>
                 I&apos;ve collected my favorite code experiments on codepen.
                 Check them out :)
@@ -107,6 +137,18 @@ class App extends Component {
               />
             </div>
           </div>
+        </section>
+        <section style={styles.cv}>
+          <h2 style={{ ...styles.sectionText, ...{ color: '#000' } }}>
+            Working experience
+          </h2>
+          <CV />
+        </section>
+        <section style={styles.bio}>
+          <h2 style={{ ...styles.sectionText, ...{ color: '#000' } }}>
+            More about me
+          </h2>
+          <BioRandom />
         </section>
       </div>
     )
