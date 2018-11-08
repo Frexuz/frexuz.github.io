@@ -14,7 +14,8 @@ class App extends Component {
 
   render() {
     const { breakpoints, currentBreakpoint } = this.props
-    const isMobile = breakpoints[currentBreakpoint] < breakpoints.desktop
+    const isMobile =
+      breakpoints[currentBreakpoint] < breakpoints.tabletLandscape
 
     const styles = {
       projects: {
@@ -24,7 +25,7 @@ class App extends Component {
       projectGrid: {
         marginTop: 50,
         display: 'grid',
-        gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 50%)',
+        gridTemplateColumns: isMobile ? '100%' : 'repeat(2, 50%)',
         gridGap: 50,
       },
       bio: {
@@ -61,7 +62,7 @@ class App extends Component {
     return (
       <div>
         <section style={styles.bio}>
-          <Bio />
+          <Bio isMobile={isMobile} />
         </section>
         <section style={styles.cv}>
           <h2 style={{ ...styles.sectionText, ...{ color: '#000' } }}>
@@ -89,9 +90,10 @@ class App extends Component {
               </svg>
               <div style={styles.tags}>
                 <Tag text="HTML" style={{ margin: 2 }} />
-                <Tag text="CSS animations" style={{ margin: 2 }} />
                 <Tag text="SCSS" style={{ margin: 2 }} />
                 <Tag text="JavaScript" style={{ margin: 2 }} />
+                <Tag text="SVG" style={{ margin: 2 }} />
+                <Tag text="Animations" style={{ margin: 2 }} />
                 <Tag text="Canvas" style={{ margin: 2 }} />
               </div>
               <h3 style={styles.projectText}>
