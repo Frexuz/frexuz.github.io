@@ -123,8 +123,7 @@ const Bio = ({ isMobile }) => {
           </svg>
         </div>
       </div>
-      <div
-        style={styles.imgWrapper}>
+      <div style={styles.imgWrapper}>
         <img src={images.profilePicture} alt="" style={styles.img} />
       </div>
       <div style={styles.info}>
