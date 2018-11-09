@@ -10,8 +10,7 @@ class CVItem extends Component {
     const {
       name,
       style,
-      startDate,
-      endDate,
+      dates,
       role,
       texts,
       breakpoints,
@@ -89,9 +88,7 @@ class CVItem extends Component {
         <div style={styles.header}>
           <h2 style={styles.name}>{name}</h2>
           <h3 style={styles.role}>{role}</h3>
-          <div style={styles.dates}>
-            {startDate} - {endDate}
-          </div>
+          <div style={styles.dates}>{dates}</div>
         </div>
         <div style={styles.info}>
           <ul style={styles.list}>
@@ -123,8 +120,7 @@ class CVItem extends Component {
 
 CVItem.propTypes = {
   name: PropTypes.string.isRequired,
-  startDate: PropTypes.string.isRequired,
-  endDate: PropTypes.string.isRequired,
+  dates: PropTypes.string.isRequired,
   style: PropTypes.objectOf(PropTypes.string),
   role: PropTypes.string.isRequired,
   texts: PropTypes.arrayOf(PropTypes.string).isRequired,

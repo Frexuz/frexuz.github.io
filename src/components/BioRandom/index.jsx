@@ -101,7 +101,7 @@ const BioRandom = ({ isMobile }) => {
         <div style={styles.sentence}>
           <p style={{ marginLeft: 2, marginRight: 4 }}>
             Born in 🇸🇪 Sweden, also speak 🇵🇱 Polish, have lived in 🇲🇹 Malta, and
-            I&apos;m currently in 🇭🇰 Hong Kong
+            currently in 🇭🇰 Hong Kong.
           </p>
         </div>
 
