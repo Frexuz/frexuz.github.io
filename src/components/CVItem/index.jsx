@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { withBreakpoints } from 'react-breakpoints'
 import PropTypes from 'prop-types'
 
+import { Tag } from '@components'
+
 // eslint-disable-next-line react/prefer-stateless-function
 class CVItem extends Component {
   render() {
@@ -14,6 +16,7 @@ class CVItem extends Component {
       texts,
       breakpoints,
       currentBreakpoint,
+      tags,
     } = this.props
     const isMobile =
       breakpoints[currentBreakpoint] < breakpoints.tabletLandscape
@@ -40,9 +43,17 @@ class CVItem extends Component {
         margin: isMobile ? '0 0 20px 0' : '0',
       },
       info: {
-        listStyleType: 'disc',
-        marginLeft: isMobile ? 0 : 20,
         flex: 3,
+        marginLeft: isMobile ? 0 : 20,
+      },
+      list: {
+        listStyleType: 'disc',
+      },
+      tags: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        marginTop: 10,
+        marginLeft: 18,
       },
       name: {
         fontSize: 32,
@@ -82,16 +93,29 @@ class CVItem extends Component {
             {startDate} - {endDate}
           </div>
         </div>
-        <ul style={styles.info}>
-          {texts.map(text => (
-            <li
-              key={text}
-              style={styles.text}
-              // eslint-disable-next-line react/no-danger
-              dangerouslySetInnerHTML={{ __html: text }}
-            />
-          ))}
-        </ul>
+        <div style={styles.info}>
+          <ul style={styles.list}>
+            {texts.map(text => (
+              <li
+                key={text}
+                style={styles.text}
+                // eslint-disable-next-line react/no-danger
+                dangerouslySetInnerHTML={{ __html: text }}
+              />
+            ))}
+          </ul>
+          <div style={styles.tags}>
+            {tags &&
+              tags.map(text => (
+                <Tag
+                  key={text}
+                  text={text}
+                  small
+                  style={{ margin: 2, backgroundColor: '#ccc' }}
+                />
+              ))}
+          </div>
+        </div>
       </div>
     )
   }
@@ -104,6 +128,7 @@ CVItem.propTypes = {
   style: PropTypes.objectOf(PropTypes.string),
   role: PropTypes.string.isRequired,
   texts: PropTypes.arrayOf(PropTypes.string).isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
   breakpoints: PropTypes.string,
   currentBreakpoint: PropTypes.string,
 }

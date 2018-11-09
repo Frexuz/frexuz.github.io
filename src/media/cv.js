@@ -9,6 +9,7 @@ export default [
       'Text text text text 2',
       'Text text text text 3',
     ],
+    tags: ['Ruby on Rails', 'MySQL', 'SCSS', 'jQuery', 'Redis', 'Websockets'],
   },
   {
     name: 'Casumo',
@@ -20,6 +21,7 @@ export default [
       'Text text text text 2',
       'Text text text text 3',
     ],
+    tags: ['Ruby on Rails', 'MySQL', 'SCSS', 'jQuery', 'Redis', 'Websockets'],
   },
   {
     name: 'EpisodeCalendar',
@@ -32,6 +34,7 @@ export default [
       'Database with over 120 million rows.',
       'I&apos;ve done everything; project development, coding, design, and customer support. Basically learned how to build and manage a product.',
     ],
+    tags: ['Ruby on Rails', 'MySQL', 'SCSS', 'jQuery', 'Redis', 'Websockets'],
   },
   {
     name: 'Sony Mobile',
@@ -40,9 +43,10 @@ export default [
     role: 'Front-end developer consultant',
     texts: [
       'Consulting on-site, developing the first ever <b class="unstyled tag">sonymobile.com</b> website after separating from Sony Ericsson.',
-      'Text text text text 2',
-      'Text text text text 3',
+      'Building a UI system based on the ability of content managers to create pages with.',
+      'Responsive website and UX.',
     ],
+    tags: ['SCSS', 'JavaScript', 'Wordpress'],
   },
   {
     name: 'KAN',
@@ -50,10 +54,11 @@ export default [
     endDate: 'Oct 2011',
     role: 'Front-end developer',
     texts: [
-      'Learned how to manage my time well and meet short deadlines.',
+      'Learned how to manage my time well and meet tight deadlines.',
       'Sometimes had multiple projects on-going at the same time.',
       'Worked with multiple top companies in Sweden, such as; <b class="unstyled tag">Sony Mobile</b>, <b class="unstyled tag">Tetra Pak</b>, <b class="unstyled tag">Nestlè</b>, and <b class="unstyled tag">IKEA</b>.',
       'KAN later won the Swedish "Best Digital Agency Award" in 2015.',
     ],
+    tags: ['Ruby on Rails', 'MySQL', 'SCSS', 'jQuery', 'Redis', 'Websockets'],
   },
 ]

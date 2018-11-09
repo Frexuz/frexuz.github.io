@@ -12,14 +12,13 @@ export default [
   },
   {
     name: 'Travlr',
+    video: 'https://www.youtube.com/embed/mr5cDf0z8c4',
     logo: images.Travlr.logo,
     backgroundColor: '#072046',
     color: '#eee',
     tagLine: 'Track which countries you have visited and flown to.',
     tags: ['React Native', 'SVG', 'GraphQL', 'AWS AppSync'],
-    buttons: [
-      { text: 'App Store', href: '#' },
-      { text: 'Play Store', href: '#' },
-    ],
+    // eslint-disable-next-line no-script-url
+    buttons: [{ text: '(coming soon)', href: 'javascript:void(0)' }],
   },
 ]

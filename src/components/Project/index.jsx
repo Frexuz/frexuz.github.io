@@ -18,21 +18,21 @@ class Project extends Component {
         textAlign: 'center',
       },
       imgWrapper: {
-        padding: 20,
         width: '100%',
-        minHeight: 200,
+        height: 200,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.2)',
+        backgroundColor: '#000',
       },
       img: {
-        maxHeight: 150,
+        maxHeight: 100,
         maxWidth: 250,
+        margin: 20,
       },
       tags: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        marginBottom: 10,
+        marginBottom: 20,
         justifyContent: 'center',
       },
       info: {
@@ -76,7 +76,19 @@ class Project extends Component {
     return (
       <div style={styles.box}>
         <div style={styles.imgWrapper}>
-          <img src={project.logo} alt="" style={styles.img} />
+          {project.video ? (
+            <iframe
+              title="video"
+              width="100%"
+              height="200"
+              src={project.video}
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          ) : (
+            <img src={project.logo} alt="" style={styles.img} />
+          )}
         </div>
         <div style={styles.info}>
           <div style={styles.tags}>
@@ -99,6 +111,7 @@ class Project extends Component {
                 text={button.text || 'Visit'}
                 href={button.href}
                 target="_blank"
+                rel="noopener noreferrer"
                 style={{ margin: 5, flex: 1 }}
               />
             ))}
