@@ -10,4 +10,7 @@ export default {
   Flately: {
     logo: require('./logos/flately.png'),
   },
+  Pollr: {
+    logo: require('./logos/pollr.png'),
+  },
 }

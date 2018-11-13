@@ -85,7 +85,7 @@ class App extends Component {
           <Bio isMobile={isMobile} />
         </section>
         <section style={styles.projects}>
-          <h2 style={styles.sectionText}>Personal projects</h2>
+          <h2 style={styles.sectionText}>Projects</h2>
           <div style={styles.projectGrid}>
             {projects.map(project => (
               <Project
