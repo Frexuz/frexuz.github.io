@@ -28,7 +28,8 @@ export default [
     name: 'Flately',
     logo: images.Flately.logo,
     tagLine: 'Property listings platform.',
-    tags: ['Ruby on Rails',
+    tags: [
+      'Ruby on Rails',
       'React Native',
       'Postgres',
       'Redis',
